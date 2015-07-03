@@ -67,7 +67,7 @@ If you discover any security related issues, please email :author_email instead 
 
 ## Credits
 
-- [Asier Arizkuren](https://github.com/:author_username)
+- [Asier Arizkuren](https://github.com/aarizkuren)
 - [All Contributors](../../contributors)
 
 ## License
