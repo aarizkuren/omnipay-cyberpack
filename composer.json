@@ -1,6 +1,6 @@
 {
     "name": "aarizkuren/omnipay-cyberpack",
-    "description": ":package_description",
+    "description": "Omnipay gateway for payments using Cyberpack",
     "keywords": [
         "omnipay",
         "cyberpack"
