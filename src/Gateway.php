@@ -1,6 +1,6 @@
 <?php
 
-namespace Omnipay\Skeleton;
+namespace Omnipay\Cyberpack;
 
 use Omnipay\Common\AbstractGateway;
 
@@ -39,6 +39,6 @@ class Gateway extends AbstractGateway
      */
     public function authorize(array $parameters = [])
     {
-        return $this->createRequest('\Omnipay\Skeleton\Message\AuthorizeRequest', $parameters);
+        return $this->createRequest('\Omnipay\Cyberpack\Message\AuthorizeRequest', $parameters);
     }
 }

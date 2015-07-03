@@ -25,7 +25,7 @@
     },
     "autoload": {
         "psr-4": {
-            "Omnipay\\Skeleton\\": "src"
+            "Omnipay\\Cyberpack\\": "src"
         }
     },
     "autoload-dev": {
