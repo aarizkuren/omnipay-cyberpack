@@ -11,15 +11,15 @@ class Gateway extends AbstractGateway
 {
     public function getName()
     {
-        return 'Skeleton';
+        return 'Cyberpack';
     }
 
     public function getDefaultParameters()
     {
-        return array(
+        return [
             'key' => '',
             'testMode' => false,
-        );
+        ];
     }
 
     public function getKey()
@@ -33,9 +33,11 @@ class Gateway extends AbstractGateway
     }
 
     /**
+     * @param array $parameters
+     *
      * @return Message\AuthorizeRequest
      */
-    public function authorize(array $parameters = array())
+    public function authorize(array $parameters = [])
     {
         return $this->createRequest('\Omnipay\Skeleton\Message\AuthorizeRequest', $parameters);
     }
