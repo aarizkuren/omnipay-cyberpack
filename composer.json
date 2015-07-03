@@ -1,11 +1,11 @@
 {
-    "name": "aarizkuren/omnipay-:gateway",
+    "name": "aarizkuren/omnipay-cyberpack",
     "description": ":package_description",
     "keywords": [
         "omnipay",
-        ":gateway"
+        "cyberpack"
     ],
-    "homepage": "https://github.com/aarizkuren/omnipay-:gateway",
+    "homepage": "https://github.com/aarizkuren/omnipay-cyberpack",
     "license": "MIT",
     "authors": [
         {
