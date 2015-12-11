@@ -69,6 +69,7 @@ If you discover any security related issues, please email asier@arizkuren.net in
 
 - [Asier Arizkuren](https://github.com/aarizkuren)
 - [All Contributors](../../contributors)
+- [Based on omnipay-redis](https://github.com/neverbot/omnipay-redsys)
 
 ## License
 
