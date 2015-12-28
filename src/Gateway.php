@@ -12,7 +12,7 @@ class Gateway extends AbstractGateway
 {
     public function getName()
     {
-        return 'Constants';
+        return 'Cyberpack';
     }
 
     public function getDefaultParameters()
