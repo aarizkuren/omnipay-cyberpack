@@ -6,8 +6,7 @@
  * Time: 12:39
  */
 
-namespace Omnipay\Message;
-
+namespace Omnipay\Cyberpack\Message;
 
 use Omnipay\Common\Exception\InvalidResponseException;
 use Omnipay\Cyberpack\Constants\Response;

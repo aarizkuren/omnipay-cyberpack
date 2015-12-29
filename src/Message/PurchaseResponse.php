@@ -6,7 +6,7 @@
  * Time: 12:31
  */
 
-namespace Omnipay\Message;
+namespace Omnipay\Cyberpack\Message;
 
 
 use Omnipay\Common\Message\AbstractResponse;
