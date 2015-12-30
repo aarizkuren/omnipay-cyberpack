@@ -7,6 +7,7 @@
 
 namespace Omnipay\Cyberpac\Message;
 
+use Guzzle\Http\EntityBody;
 use Omnipay\Common\Message\AbstractResponse;
 use Omnipay\Cyberpac\Constants\Response;
 
@@ -23,6 +24,7 @@ class CompletePurchaseResponse extends AbstractResponse implements Response
      */
     public function isSuccessful()
     {
+        /** @var EntityBody $d */
         $d = $this->data;
         return (isset($d[self::RESPONSE]) && $d[self::RESPONSE] >= 0 && $d[self::RESPONSE] < 100);
     }

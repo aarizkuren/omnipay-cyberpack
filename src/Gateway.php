@@ -1,6 +1,6 @@
 <?php
 
-namespace Omnipay\Cyberpack;
+namespace Omnipay\Cyberpac;
 
 use Omnipay\Common\AbstractGateway;
 use Omnipay\Cyberpac\Constants\Language;
@@ -25,6 +25,16 @@ class Gateway extends AbstractGateway
             'terminal' => 1,
             'testMode' => false,
         ];
+    }
+
+    public function getLanguage()
+    {
+        return $this->getParameter('language');
+    }
+
+    public function setLanguage($language)
+    {
+        return $this->setParameter('language', $language);
     }
 
     public function getMerchantCode()
