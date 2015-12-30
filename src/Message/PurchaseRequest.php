@@ -1,18 +1,21 @@
 <?php
 /**
- * Created by PhpStorm.
  * User: asier
  * Date: 11/12/15
  * Time: 12:02
  */
 
-namespace Omnipay\Cyberpack\Message;
+namespace Omnipay\Cyberpac\Message;
 
 use Omnipay\Common\Message\AbstractRequest;
 use Omnipay\Common\Message\ResponseInterface;
-use Omnipay\Cyberpack\Constants\Request;
-use Omnipay\Cyberpack\Constants\TransactionType;
+use Omnipay\Cyberpac\Constants\Request;
+use Omnipay\Cyberpac\Constants\TransactionType;
 
+/**
+ * Class PurchaseRequest
+ * @package Omnipay\Cyberpac\Message
+ */
 class PurchaseRequest extends AbstractRequest implements Request
 {
     /**

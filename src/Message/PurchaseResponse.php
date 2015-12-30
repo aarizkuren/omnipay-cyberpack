@@ -1,17 +1,19 @@
 <?php
 /**
- * Created by PhpStorm.
  * User: asier
  * Date: 11/12/15
  * Time: 12:31
  */
 
-namespace Omnipay\Cyberpack\Message;
-
+namespace Omnipay\Cyberpac\Message;
 
 use Omnipay\Common\Message\AbstractResponse;
 use Omnipay\Common\Message\RedirectResponseInterface;
 
+/**
+ * Class PurchaseResponse
+ * @package Omnipay\Cyberpac\Message
+ */
 class PurchaseResponse extends AbstractResponse implements RedirectResponseInterface
 {
     /**

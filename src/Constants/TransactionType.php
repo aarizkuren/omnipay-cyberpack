@@ -1,18 +1,17 @@
 <?php
 /**
- * Created by PhpStorm.
  * User: asier
  * Date: 11/12/15
  * Time: 11:41
  */
 
-namespace Omnipay\Cyberpack\Constants;
+namespace Omnipay\Cyberpac\Constants;
 
 /**
  * CyberPack transaction types
  *
  * Interface Transaction
- * @package Omnipay\Constants
+ * @package Omnipay\Cyberpac\Constants
  */
 interface TransactionType
 {

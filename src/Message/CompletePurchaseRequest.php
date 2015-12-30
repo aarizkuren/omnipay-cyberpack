@@ -1,16 +1,19 @@
 <?php
 /**
- * Created by PhpStorm.
  * User: asier
  * Date: 11/12/15
  * Time: 12:39
  */
 
-namespace Omnipay\Cyberpack\Message;
+namespace Omnipay\Cyberpac\Message;
 
 use Omnipay\Common\Exception\InvalidResponseException;
-use Omnipay\Cyberpack\Constants\Response;
+use Omnipay\Cyberpac\Constants\Response;
 
+/**
+ * Class CompletePurchaseRequest
+ * @package Omnipay\Cyberpac\Message
+ */
 class CompletePurchaseRequest extends PurchaseRequest
 {
     public function checkSignature($data, $signature)

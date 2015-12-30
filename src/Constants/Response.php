@@ -1,14 +1,16 @@
 <?php
 /**
- * Created by PhpStorm.
  * User: asier
  * Date: 11/12/15
  * Time: 13:01
  */
 
-namespace Omnipay\Cyberpack\Constants;
+namespace Omnipay\Cyberpac\Constants;
 
-
+/**
+ * Interface Response
+ * @package Omnipay\Cyberpac\Constants
+ */
 interface Response
 {
     const AMOUNT = 'Ds_Amount';

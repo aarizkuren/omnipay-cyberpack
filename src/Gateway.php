@@ -3,7 +3,7 @@
 namespace Omnipay\Cyberpack;
 
 use Omnipay\Common\AbstractGateway;
-use Omnipay\Cyberpack\Constants\Language;
+use Omnipay\Cyberpac\Constants\Language;
 
 /**
  * Skeleton Gateway
@@ -12,7 +12,7 @@ class Gateway extends AbstractGateway
 {
     public function getName()
     {
-        return 'Cyberpack';
+        return 'Cyberpac';
     }
 
     public function getDefaultParameters()
@@ -69,11 +69,11 @@ class Gateway extends AbstractGateway
 
     public function purchase(array $parameters = [])
     {
-        return $this->createRequest('\Omnipay\Cyberpack\Message\PurchaseRequest', $parameters);
+        return $this->createRequest('\Omnipay\Cyberpac\Message\PurchaseRequest', $parameters);
     }
 
     public function completePurchase(array $parameters = [])
     {
-        return $this->createRequest('\Omnipay\Cyberpack\Message\CompletePurchaseRequest', $parameters);
+        return $this->createRequest('\Omnipay\Cyberpac\Message\CompletePurchaseRequest', $parameters);
     }
 }

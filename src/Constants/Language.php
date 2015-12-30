@@ -1,18 +1,17 @@
 <?php
 /**
- * Created by PhpStorm.
  * User: asier
  * Date: 11/12/15
  * Time: 10:54
  */
 
-namespace Omnipay\Cyberpack\Constants;
+namespace Omnipay\Cyberpac\Constants;
 
 /**
  * Constants accepts languages
  *
  * Interface Language
- * @package Omnipay\Constants
+ * @package Omnipay\Cyberpac\Constants
  */
 interface Language
 {
