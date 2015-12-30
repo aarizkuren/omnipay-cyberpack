@@ -8,14 +8,14 @@
 namespace Omnipay\Cyberpac\Constants;
 
 /**
- * CyberPac currencies
+ * CyberPac accepted currencies
  *
  * Interface Currency
  * @package Omnipay\Cyberpac\Constants
  */
 interface Currency
 {
-    const DOLLAR = 840;
-    const EURO = 978;
-    const POUND = 826;
+    const USD = 'USD';
+    const EURO = 'EUR';
+    const GBP = 'GBP';
 }

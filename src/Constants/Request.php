@@ -23,6 +23,13 @@ interface Request
     const PARAM_MERCHANT_PARAMETERS = 'DS_MerchantParameters';
     const PARAM_SIGNATURE = 'DS_Signature';
 
+    const PARAM_AMOUNT = 'amount';
+    const PARAM_ORDER = 'token';
+    const PARAM_PRODUCT_DESCRIPTION = 'productDescription';
+    const PARAM_TITULAR = 'titular';
+    const PARAM_URL_OK = 'urlOk';
+    const PARAM_URL_KO = 'urlKo';
+
     const AMOUNT = 'DS_MERCHANT_AMOUNT';
     const AUTHORISATION_CODE = 'DS_MERCHANT_AUTHORISATIONCODE';
     const CARD = 'DS_MERCHANT_PAN';

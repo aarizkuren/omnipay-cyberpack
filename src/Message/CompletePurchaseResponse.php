@@ -26,6 +26,7 @@ class CompletePurchaseResponse extends AbstractResponse implements Response
     {
         /** @var EntityBody $d */
         $d = $this->data;
-        return (isset($d[self::RESPONSE]) && $d[self::RESPONSE] >= 0 && $d[self::RESPONSE] < 100);
+        $r = $d->getWrapperData();
+        return (isset($r[self::RESPONSE]) && $r[self::RESPONSE] >= 0 && $r[self::RESPONSE] < 100);
     }
 }

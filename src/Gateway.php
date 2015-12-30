@@ -3,12 +3,15 @@
 namespace Omnipay\Cyberpac;
 
 use Omnipay\Common\AbstractGateway;
+use Omnipay\Cyberpac\Constants\Currency;
 use Omnipay\Cyberpac\Constants\Language;
+use Omnipay\Cyberpac\Constants\Parameter;
+use Omnipay\Cyberpac\Constants\TransactionType;
 
 /**
- * Skeleton Gateway
+ * Cyberpac Gateway
  */
-class Gateway extends AbstractGateway
+class Gateway extends AbstractGateway implements Parameter
 {
     public function getName()
     {
@@ -18,63 +21,86 @@ class Gateway extends AbstractGateway
     public function getDefaultParameters()
     {
         return [
-            'language' => Language::ES,
-            'merchantCode' => '',
-            'merchantName' => 'Omnipay',
-            'secretKey' => '',
-            'terminal' => 1,
-            'testMode' => false,
+            self::CURRENCY => Currency::EURO,
+            self::LANGUAGE => Language::ES,
+            self::MERCHANT_CODE => '',
+            self::MERCHANT_NAME => 'Omnipay',
+            self::MERCHANT_URL => '',
+            self::SECRET_KEY => '',
+            self::TERMINAL => '001',
+            self::TEST_MODE => false,
+            self::TRANSACTION_TYPE => TransactionType::AUTHORIZATION,
         ];
     }
 
     public function getLanguage()
     {
-        return $this->getParameter('language');
+        return $this->getParameter(self::LANGUAGE);
     }
 
     public function setLanguage($language)
     {
-        return $this->setParameter('language', $language);
+        return $this->setParameter(self::LANGUAGE, $language);
     }
 
     public function getMerchantCode()
     {
-        return $this->getParameter('merchantCode');
+        return $this->getParameter(self::MERCHANT_CODE);
     }
 
-    public function setMerchantCode($value)
+    public function setMerchantCode($merchantCode)
     {
-        return $this->setParameter('merchantCode', $value);
+        return $this->setParameter(self::MERCHANT_CODE, $merchantCode);
+    }
+
+    public function getMerchantName()
+    {
+        return $this->getParameter(self::MERCHANT_NAME);
+    }
+
+    public function setMerchantName($merchantName)
+    {
+        return $this->setParameter(self::MERCHANT_NAME, $merchantName);
+    }
+
+    public function getMerchantUrl()
+    {
+        return $this->getParameter(self::MERCHANT_URL);
+    }
+
+    public function setMerchantUrl($merchantUrl)
+    {
+        return $this->setParameter(self::MERCHANT_URL, $merchantUrl);
     }
 
     public function getSecretKey()
     {
-        return $this->getParameter('secretKey');
+        return $this->getParameter(self::SECRET_KEY);
     }
 
-    public function setSecretKey($value)
+    public function setSecretKey($secretKey)
     {
-        return $this->setParameter('secretKey', $value);
+        return $this->setParameter(self::SECRET_KEY, $secretKey);
     }
 
     public function getTerminal()
     {
-        return $this->getParameter('terminal');
+        return $this->getParameter(self::TERMINAL);
     }
 
-    public function setTerminal($value)
+    public function setTerminal($terminal)
     {
-        return $this->setParameter('terminal', $value);
+        return $this->setParameter(self::TERMINAL, $terminal);
     }
 
-    public function getPayMethods()
+    public function getTransactionType()
     {
-        return $this->getParameter('payMethods');
+        return $this->getParameter(self::TRANSACTION_TYPE);
     }
 
-    public function setPayMethods($value)
+    public function setTransactionType($transactionType)
     {
-        return $this->setParameter('payMethods', $value);
+        return $this->setParameter(self::TRANSACTION_TYPE, $transactionType);
     }
 
     public function purchase(array $parameters = [])
