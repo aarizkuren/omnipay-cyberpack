@@ -34,6 +34,7 @@ class CompletePurchaseRequestTest extends TestCase
             Parameter::MERCHANT_URL => 'http://test.com',
             Parameter::TERMINAL => '001',
             Parameter::TRANSACTION_TYPE => TransactionType::AUTHORIZATION,
+            Parameter::SECRET_KEY => 'qwertyasdf0123456789',
             $r::PARAM_URL_OK => 'http://ok.com',
             $r::PARAM_URL_KO => 'http://ko.com',
         ];
@@ -54,5 +55,28 @@ class CompletePurchaseRequestTest extends TestCase
         $this->assertEquals('2.00', $this->request->getAmount());
         $this->request->setAmount('4.00');
         $this->assertEquals('4.00', $this->request->getAmount());
+    }
+
+    public function testMerchantOrder()
+    {
+        $this->assertSame('000000lalala', $this->request->getMerchantOrder());
+    }
+
+    public function testCreateSignature()
+    {
+        $data = [
+            'amount' => '2.00',
+            'order' => '000000lalala',
+            'merchant_code' => '001',
+            'currency' => Currency::EURO,
+            'transaction_type' => TransactionType::AUTHORIZATION,
+            'merchant_url' => 'http://test.com',
+            'secret' => 'qwertyasdf0123456789',
+        ];
+
+        $data = implode('', $data);
+        $signature = strtoupper(sha1($data));
+
+        $this->assertSame($signature, $this->request->createSignature());
     }
 }

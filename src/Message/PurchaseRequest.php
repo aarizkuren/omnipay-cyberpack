@@ -70,9 +70,19 @@ class PurchaseRequest extends AbstractRequest implements Request
         return $this->getParameter(Parameter::LANGUAGE);
     }
 
+    public function setLanguage($lang)
+    {
+        return $this->setParameter(Parameter::LANGUAGE, $lang);
+    }
+
     public function getMerchantCode()
     {
         return $this->getParameter(Parameter::MERCHANT_CODE);
+    }
+
+    public function setMerchantCode($code)
+    {
+        return $this->setParameter(Parameter::MERCHANT_CODE, $code);
     }
 
     public function getMerchantName()
@@ -80,14 +90,39 @@ class PurchaseRequest extends AbstractRequest implements Request
         return $this->getParameter(Parameter::MERCHANT_NAME);
     }
 
+    public function setMerchantName($name)
+    {
+        return $this->setParameter(Parameter::MERCHANT_NAME, $name);
+    }
+
+    public function getMerchantUrl()
+    {
+        return $this->getParameter(Parameter::MERCHANT_URL);
+    }
+
+    public function setMerchantUrl($merchantUrl)
+    {
+        return $this->setParameter(Parameter::MERCHANT_URL, $merchantUrl);
+    }
+
     public function getSecretKey()
     {
         return $this->getParameter(Parameter::SECRET_KEY);
     }
 
+    public function setSecretKey($key)
+    {
+        return $this->setParameter(Parameter::SECRET_KEY, $key);
+    }
+
     public function getTerminal()
     {
         return $this->getParameter(Parameter::TERMINAL);
+    }
+
+    public function setTerminal($terminal)
+    {
+        return $this->setParameter(Parameter::TERMINAL, $terminal);
     }
 
     public function getTitular()
@@ -100,16 +135,31 @@ class PurchaseRequest extends AbstractRequest implements Request
         return $this->setParameter(self::PARAM_TITULAR, $titular);
     }
 
-    public function getMerchantOrder()
+    public function getTransactionType()
     {
-        return str_pad($this->getTransactionId(), 12, '0', STR_PAD_LEFT);
+        return $this->getParameter(Parameter::TRANSACTION_TYPE);
     }
 
-    public function createSignature($codedData)
+    public function setTransactionType($transactionType)
     {
+        return $this->setParameter(Parameter::TRANSACTION_TYPE, $transactionType);
+    }
+
+    public function getMerchantOrder()
+    {
+        return str_pad($this->getToken(), 12, '0', STR_PAD_LEFT);
+    }
+
+    public function createSignature()
+    {
+        /*
+         * Dejo esto comentado por ahora, y utilizo la forma antigua de crear la firma
         $key = $this->generateKey($this->getToken(), $this->getSecretKey());
 
         return $this->generateSignature($codedData, $key);
+        */
+
+        return $this->createOldSignature();
     }
 
     protected function generateSignature($codedData, $key)
@@ -140,5 +190,23 @@ class PurchaseRequest extends AbstractRequest implements Request
         $text = mcrypt_encrypt(MCRYPT_3DES, $key, $message, MCRYPT_MODE_CBC, $iv);
 
         return $text;
+    }
+
+    /**
+     * @return string
+     * @throws \Omnipay\Common\Exception\InvalidRequestException
+     */
+    protected function createOldSignature()
+    {
+        $message = $this->getAmount()
+            . $this->getMerchantOrder()
+            . $this->getMerchantCode()
+            . $this->getCurrency()
+            . $this->getTransactionType()
+            . $this->getMerchantUrl()
+            . $this->getSecretKey()
+            ;
+
+        return strtoupper(sha1($message));
     }
 }

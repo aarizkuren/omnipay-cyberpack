@@ -2,7 +2,6 @@
 
 namespace Omnipay\Cyberpac;
 
-use Omnipay\Cyberpac\Constants\Currency;
 use Omnipay\Cyberpac\Constants\Language;
 use Omnipay\Cyberpac\Constants\Parameter;
 use Omnipay\Tests\GatewayTestCase;
@@ -23,7 +22,7 @@ class GatewayTest extends GatewayTestCase
         $options = $this->gateway->getDefaultParameters();
 
         $options[Parameter::MERCHANT_CODE] = '0001';
-        $options[Parameter::MERCHANT_URL] = 'http:url.com';
+        $options[Parameter::MERCHANT_URL] = 'http://url.com';
         $options[Parameter::SECRET_KEY] = 'secr3t';
         $options[Parameter::TEST_MODE] = true;
 
@@ -52,7 +51,7 @@ class GatewayTest extends GatewayTestCase
 
     public function testMerchantUrl()
     {
-        $this->assertEquals('http:url.com', $this->gateway->getMerchantUrl());
+        $this->assertEquals('http://url.com', $this->gateway->getMerchantUrl());
     }
 
     public function testMerchantName()

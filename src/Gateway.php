@@ -21,7 +21,7 @@ class Gateway extends AbstractGateway implements Parameter
     public function getDefaultParameters()
     {
         return [
-            self::CURRENCY => Currency::EURO,
+            //self::CURRENCY => Currency::EURO,
             self::LANGUAGE => Language::ES,
             self::MERCHANT_CODE => '',
             self::MERCHANT_NAME => 'Omnipay',
